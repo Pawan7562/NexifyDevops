@@ -60,7 +60,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (saved && ['white-emerald', 'clean-light-emerald', 'forest-mint', 'titanium-neon-green'].includes(saved)) {
       return saved as AppTheme;
     }
-    return 'clean-light-emerald'; // Default to Pure White & Clean Emerald
+    return 'white-emerald'; // Default to White & Emerald
   });
 
   const setTheme = (newTheme: AppTheme) => {
