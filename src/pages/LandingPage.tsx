@@ -30,7 +30,12 @@ import {
   Flame,
   KeyRound,
   FileCode2,
-  Network
+  Network,
+  Bug,
+  AlertOctagon,
+  Eye,
+  Send,
+  Mail
 } from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
@@ -43,6 +48,14 @@ export const LandingPage: React.FC = () => {
   const [simulatedPing, setSimulatedPing] = useState(24);
   const [isSimulatingDeploy, setIsSimulatingDeploy] = useState(false);
   const [deploySuccess, setDeploySuccess] = useState(false);
+
+  // AI Sentinel Anomaly Simulator State
+  const [simulatedAnomaly, setSimulatedAnomaly] = useState<'NONE' | 'SPIKE' | 'DEADLOCK' | 'AUDIO'>('NONE');
+  const [isResolvingAnomaly, setIsResolvingAnomaly] = useState(false);
+
+  // Email alert subscription state
+  const [subscriberEmail, setSubscriberEmail] = useState('');
+  const [subscribedSuccess, setSubscribedSuccess] = useState(false);
 
   // Live Ping Telemetry Jitter Simulation
   useEffect(() => {
@@ -60,6 +73,23 @@ export const LandingPage: React.FC = () => {
       setDeploySuccess(true);
       setTimeout(() => setDeploySuccess(false), 4000);
     }, 1800);
+  };
+
+  const handleTriggerAnomaly = (type: 'SPIKE' | 'DEADLOCK' | 'AUDIO') => {
+    setSimulatedAnomaly(type);
+    setIsResolvingAnomaly(true);
+    setTimeout(() => {
+      setIsResolvingAnomaly(false);
+    }, 2200);
+  };
+
+  const handleSubscribeNewsletter = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (subscriberEmail.trim()) {
+      setSubscribedSuccess(true);
+      setTimeout(() => setSubscribedSuccess(false), 4000);
+      setSubscriberEmail('');
+    }
   };
 
   const copyToClipboard = (text: string) => {
@@ -183,8 +213,9 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
           <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
             <a href="#cockpit" className="hover:text-emerald-400 transition-colors">Fleet Cockpit</a>
             <a href="#architecture" className="hover:text-emerald-400 transition-colors">Architecture</a>
-            <a href="#pillars" className="hover:text-emerald-400 transition-colors">Core Pillars</a>
             <a href="#ai-sentinel" className="hover:text-emerald-400 transition-colors">AI Sentinel</a>
+            <a href="#pillars" className="hover:text-emerald-400 transition-colors">Core Pillars</a>
+            <a href="#edge-nodes" className="hover:text-emerald-400 transition-colors">Global Nodes</a>
             <a href="#api-cli" className="hover:text-emerald-400 transition-colors">SDK & API</a>
             <a href="#sla" className="hover:text-emerald-400 transition-colors">SLA Tiers</a>
             <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
@@ -192,7 +223,6 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
 
           {/* Right Action CTAs */}
           <div className="flex items-center gap-3">
-            {/* Live Operational Status Pill */}
             <div className="hidden lg:flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-[11px] font-mono text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>ALL FLEETS OPERATIONAL</span>
@@ -210,7 +240,7 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
       </header>
 
       {/* ── Hero Section ── */}
-      <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+      <section className="relative pt-16 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
         {/* Release Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -271,13 +301,41 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
           </a>
         </motion.div>
 
-        {/* Key Real-Time Metrics Ribbon */}
+        {/* High-Resolution 3D Command Center Visual */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left"
+          initial={{ opacity: 0, scale: 0.96, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-14 max-w-5xl mx-auto relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-950/60 bg-slate-950 group"
         >
+          <img
+            src="/images/hero_datacenter.jpg"
+            alt="Nexify DevOps Enterprise Command Center Visualization"
+            className="w-full h-auto object-cover rounded-3xl opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+
+          {/* Floating Telemetry Badges */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap gap-2">
+            <span className="px-3 py-1 rounded-lg bg-slate-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>CLUSTER-01 [ACTIVE]</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-slate-950/80 border border-cyan-500/40 text-cyan-400 text-xs font-mono backdrop-blur-md hidden sm:flex items-center gap-1.5 shadow-lg">
+              <Globe className="w-3.5 h-3.5" />
+              <span>AWS-AP-SOUTH-1</span>
+            </span>
+          </div>
+
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6">
+            <div className="px-4 py-2 rounded-xl bg-slate-950/85 border border-slate-700 text-xs font-mono text-slate-300 backdrop-blur-md flex items-center gap-2 shadow-xl">
+              <span className="text-slate-500">REAL-TIME WEBRTC:</span>
+              <span className="text-emerald-400 font-bold">{simulatedPing} ms</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Key Metrics Ribbon */}
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
           <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md">
             <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">99.99%</div>
             <div className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
@@ -312,7 +370,7 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
               <span>Autonomous Rollback</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ── Section: Interactive Fleet Cockpit Simulator ── */}
@@ -571,6 +629,191 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
                 <span className="text-emerald-400 font-semibold">2FA PIN Verified</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: AI Sentinel & Autonomous Incident Resolver ── */}
+      <section id="ai-sentinel" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Interactive Anomaly Simulator */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 text-xs font-mono font-semibold">
+              <Cpu className="w-3.5 h-3.5" />
+              <span>AUTONOMOUS INCIDENT SUPERVISOR</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              AI SRE That Diagnoses & Heals In Real-Time
+            </h2>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              When high-concurrency exam proctoring streams spike or database connections choke, AI Sentinel flags the exact root cause in &lt; 300ms and executes automated runbook rollbacks.
+            </p>
+
+            <div className="space-y-3">
+              <span className="text-xs font-mono text-slate-400 font-semibold block">
+                TEST INTERACTIVE INCIDENT SIMULATION:
+              </span>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <button
+                  onClick={() => handleTriggerAnomaly('SPIKE')}
+                  className={`px-3 py-2 rounded-xl border font-mono transition-all ${
+                    simulatedAnomaly === 'SPIKE'
+                      ? 'bg-rose-500/20 border-rose-500 text-rose-400'
+                      : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-rose-500/50'
+                  }`}
+                >
+                  ⚡ High Concurrency Video Spike
+                </button>
+                <button
+                  onClick={() => handleTriggerAnomaly('DEADLOCK')}
+                  className={`px-3 py-2 rounded-xl border font-mono transition-all ${
+                    simulatedAnomaly === 'DEADLOCK'
+                      ? 'bg-amber-500/20 border-amber-500 text-amber-400'
+                      : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-amber-500/50'
+                  }`}
+                >
+                  🔒 Neon DB Pool Exhaustion
+                </button>
+              </div>
+            </div>
+
+            {/* AI Diagnosis Output Card */}
+            <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 font-mono text-xs">
+              <div className="flex items-center justify-between">
+                <span className="text-slate-400 flex items-center gap-1.5">
+                  <Terminal className="w-4 h-4 text-emerald-400" />
+                  <span>AI Sentinel Diagnostic Engine</span>
+                </span>
+                {isResolvingAnomaly ? (
+                  <span className="text-amber-400 animate-pulse flex items-center gap-1">
+                    <RefreshCw className="w-3 h-3 animate-spin" /> Auto-Remediating...
+                  </span>
+                ) : (
+                  <span className="text-emerald-400">STATUS: STABLE</span>
+                )}
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 text-[11px] leading-relaxed">
+                {simulatedAnomaly === 'SPIKE' ? (
+                  <div>
+                    <span className="text-rose-400 font-bold block mb-1">
+                      [ANOMALY FLAGGED] 1,420 Concurrent WebRTC Face Gaze Streams
+                    </span>
+                    <span>
+                      Diagnosis: Examiner multi-cam grid buffers saturated. <br />
+                      Remediation: Spawned 4 ephemeral TURN relay pods; re-routed video frames to 15 FPS sub-band.
+                    </span>
+                  </div>
+                ) : simulatedAnomaly === 'DEADLOCK' ? (
+                  <div>
+                    <span className="text-amber-400 font-bold block mb-1">
+                      [ALERT] Connection Pool Reached 94% Threshold
+                    </span>
+                    <span>
+                      Diagnosis: Concurrent question shuffling queries holding open transactions. <br />
+                      Remediation: Applied scale-to-max compute burst on Neon Serverless branch; latency reduced to 22ms.
+                    </span>
+                  </div>
+                ) : (
+                  <div>
+                    <span className="text-emerald-400 font-bold block mb-1">
+                      [MONITORING] All Fleet Metrics Nominal
+                    </span>
+                    <span>
+                      Zero anomalous spikes detected across 3 active client fleets. Background packet loss: 0.001%.
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: High-Tech Visual Graphic */}
+          <div className="relative rounded-3xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/40 bg-slate-950 group">
+            <img
+              src="/images/ai_core.jpg"
+              alt="AI Sentinel Autonomous Neural SRE Core"
+              className="w-full h-auto object-cover rounded-3xl opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#090D16] via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/80 border border-cyan-500/30 backdrop-blur-md text-xs font-mono text-cyan-300 flex items-center justify-between">
+              <span>NEURAL SCANNER: ACTIVE</span>
+              <span className="text-emerald-400 font-bold">THREAT LEVEL: LOW</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Global Edge Nodes & Telemetry Network ── */}
+      <section id="edge-nodes" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center space-y-3 mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/25 text-xs font-mono font-semibold">
+            <Globe className="w-3.5 h-3.5" />
+            <span>GLOBAL EDGE MESH</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Sub-Second Telemetry Across Global Regions
+          </h2>
+          <p className="text-sm text-slate-400 max-w-2xl mx-auto">
+            Distributed monitoring points continuously measure real-world packet latencies and uptime compliance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Node 1 */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 hover:border-emerald-500/50 transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">AWS AP-SOUTH-1</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <div className="text-base font-bold text-white">Mumbai, India</div>
+            <div className="flex items-end justify-between font-mono pt-2 border-t border-slate-900">
+              <span className="text-xs text-slate-500">Latency:</span>
+              <span className="text-emerald-400 font-bold text-sm">24 ms</span>
+            </div>
+            <div className="text-[11px] font-mono text-slate-400">Primary WebRTC Fleet Hub</div>
+          </div>
+
+          {/* Node 2 */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 hover:border-cyan-500/50 transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">AWS US-EAST-2</span>
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            </div>
+            <div className="text-base font-bold text-white">Ohio, US-East</div>
+            <div className="flex items-end justify-between font-mono pt-2 border-t border-slate-900">
+              <span className="text-xs text-slate-500">Latency:</span>
+              <span className="text-cyan-400 font-bold text-sm">82 ms</span>
+            </div>
+            <div className="text-[11px] font-mono text-slate-400">Neon Postgres Branch Cluster</div>
+          </div>
+
+          {/* Node 3 */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 hover:border-teal-500/50 transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">EU-CENTRAL-1</span>
+              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+            </div>
+            <div className="text-base font-bold text-white">Frankfurt, Germany</div>
+            <div className="flex items-end justify-between font-mono pt-2 border-t border-slate-900">
+              <span className="text-xs text-slate-500">Latency:</span>
+              <span className="text-teal-400 font-bold text-sm">64 ms</span>
+            </div>
+            <div className="text-[11px] font-mono text-slate-400">Europe Edge Relay Cache</div>
+          </div>
+
+          {/* Node 4 */}
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 hover:border-indigo-500/50 transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">AP-SOUTHEAST-1</span>
+              <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+            </div>
+            <div className="text-base font-bold text-white">Singapore Node</div>
+            <div className="flex items-end justify-between font-mono pt-2 border-t border-slate-900">
+              <span className="text-xs text-slate-500">Latency:</span>
+              <span className="text-indigo-400 font-bold text-sm">38 ms</span>
+            </div>
+            <div className="text-[11px] font-mono text-slate-400">Asia WebRTC Invigilator Relay</div>
           </div>
         </div>
       </section>
@@ -1025,29 +1268,100 @@ CREATE TABLE IF NOT EXISTS exam_proctoring_sessions (
         </div>
       </section>
 
-      {/* ── Global Footer ── */}
-      <footer className="border-t border-slate-800 bg-[#060A12] text-xs text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-sm">
-              ⚡
+      {/* ── Enhanced Enterprise Footer with Security Badges & Alerts ── */}
+      <footer className="border-t border-slate-800 bg-[#060A12] text-xs text-slate-400 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Top Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800/80">
+            {/* Column 1: Brand Info */}
+            <div className="space-y-4 md:col-span-1">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-slate-950 font-black text-base shadow-lg shadow-emerald-500/30">
+                  ⚡
+                </div>
+                <div>
+                  <span className="font-extrabold text-white text-sm tracking-tight">NEXIFY DEVOPS</span>
+                  <p className="text-[10px] text-slate-500">Nexify Forge Technologies</p>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Dedicated enterprise fleet control plane, telemetry ingestion radar, AI supervisor, and cryptographic secrets vault.
+              </p>
+              <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>SYSTEMS: 100% OPERATIONAL</span>
+              </div>
             </div>
+
+            {/* Column 2: Navigation Links */}
+            <div className="space-y-3">
+              <span className="text-xs font-mono text-slate-200 uppercase tracking-wider font-bold">Control Plane</span>
+              <ul className="space-y-2 text-xs">
+                <li><a href="#cockpit" className="hover:text-emerald-400 transition-colors">Fleet Cockpit Simulator</a></li>
+                <li><a href="#architecture" className="hover:text-emerald-400 transition-colors">Multi-Tenant Architecture</a></li>
+                <li><a href="#ai-sentinel" className="hover:text-emerald-400 transition-colors">Autonomous AI Sentinel</a></li>
+                <li><a href="#edge-nodes" className="hover:text-emerald-400 transition-colors">Global Edge Mesh</a></li>
+                <li><Link to="/login" className="hover:text-emerald-400 transition-colors font-semibold text-emerald-400">Developer Console Sign In ➔</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Monitored Client Fleets */}
+            <div className="space-y-3">
+              <span className="text-xs font-mono text-slate-200 uppercase tracking-wider font-bold">Monitored Fleets</span>
+              <ul className="space-y-2 text-xs">
+                <li><a href="https://www.pkthenexgenexam.xyz/" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors flex items-center gap-1">PK The NexGen Exam <ExternalLink className="w-3 h-3 text-slate-500" /></a></li>
+                <li><a href="https://orderkare.co.in" target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors flex items-center gap-1">OrderKare Dining SaaS <ExternalLink className="w-3 h-3 text-slate-500" /></a></li>
+                <li><span className="text-slate-500">Nexify Enterprise Lead CRM</span></li>
+                <li><span className="text-slate-500">Autonomous AI Proctoring Node</span></li>
+              </ul>
+            </div>
+
+            {/* Column 4: SRE Alert Dispatch Subscription */}
+            <div className="space-y-3">
+              <span className="text-xs font-mono text-slate-200 uppercase tracking-wider font-bold">SRE Telemetry Feed</span>
+              <p className="text-xs text-slate-400">
+                Subscribe for major incident updates, zero-downtime changelogs, and security bulletins.
+              </p>
+              <form onSubmit={handleSubscribeNewsletter} className="space-y-2">
+                <div className="relative">
+                  <input
+                    type="email"
+                    value={subscriberEmail}
+                    onChange={(e) => setSubscriberEmail(e.target.value)}
+                    required
+                    placeholder="dev@organization.com"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-mono text-xs focus:border-emerald-500 focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition-all"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+                {subscribedSuccess && (
+                  <p className="text-[11px] text-emerald-400 font-mono">✓ Subscribed to Nexify DevOps telemetry alerts</p>
+                )}
+              </form>
+            </div>
+          </div>
+
+          {/* Bottom Security Compliance Ribbons & Copyright */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4 text-[11px] text-slate-500 font-mono">
+            <div className="flex flex-wrap items-center gap-4 text-slate-400">
+              <span className="flex items-center gap-1.5 text-emerald-400">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>SOC-2 Type II Certified Process</span>
+              </span>
+              <span>•</span>
+              <span>AES-256-GCM Encrypted At Rest</span>
+              <span>•</span>
+              <span>TLS 1.3 Hardware Acceleration</span>
+            </div>
+
             <div>
-              <span className="font-bold text-white">NEXIFY DEVOPS</span>
-              <span className="text-slate-500 ml-2">by Nexify Forge Technologies</span>
+              © {new Date().getFullYear()} Nexify Forge Technologies. All rights reserved.
             </div>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-6 text-[11px] text-slate-400">
-            <a href="#cockpit" className="hover:text-emerald-400 transition-colors">Fleet Cockpit</a>
-            <a href="#architecture" className="hover:text-emerald-400 transition-colors">Architecture</a>
-            <a href="#pillars" className="hover:text-emerald-400 transition-colors">Security Vault</a>
-            <Link to="/login" className="hover:text-emerald-400 transition-colors">Console Login</Link>
-            <span className="text-emerald-400 font-mono">● 256-Bit Hardware TLS Active</span>
-          </div>
-
-          <div className="text-[11px] text-slate-500 font-mono">
-            © {new Date().getFullYear()} Nexify Forge Technologies. All rights reserved.
           </div>
         </div>
       </footer>
