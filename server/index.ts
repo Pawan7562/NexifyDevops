@@ -69,12 +69,16 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   });
 });
 
+import { initPostgresDatabase } from './db/postgres';
+
 // Initialize database and start server
 async function bootstrap() {
   try {
     await db.init();
+    await initPostgresDatabase();
     
     server.listen(PORT, () => {
+
       console.log(`=======================================================`);
       console.log(`🚀 Nexify DevOps Enterprise Backend is running!`);
       console.log(`📡 REST API:      http://localhost:${PORT}/api/v1`);
