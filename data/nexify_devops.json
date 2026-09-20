@@ -29,7 +29,7 @@
       "environment": "PRODUCTION",
       "health": "HEALTHY",
       "uptimePercent": 99.98,
-      "latencyMs": 161,
+      "latencyMs": 122,
       "liveUrl": "https://www.pkthenexgenexam.xyz/",
       "repoUrl": "https://github.com/nexifyforge/pkthenexgenexam",
       "framework": "Next.js 15 / WebRTC AI Video Stream / Python FastAPI Anti-Cheat",
@@ -154,7 +154,7 @@
       "environment": "PRODUCTION",
       "health": "HEALTHY",
       "uptimePercent": 99.99,
-      "latencyMs": 248,
+      "latencyMs": 264,
       "liveUrl": "https://orderkare.co.in",
       "repoUrl": "https://github.com/Pawan7562/Orderkare",
       "framework": "React 19 / Node.js Express / Socket.IO",
@@ -274,6 +274,312 @@
     }
   ],
   "uptimeHistory": [
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 264,
+      "status": "UP",
+      "id": "upt_1789903700116",
+      "checkedAt": "2026-09-20T11:28:20.116Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 122,
+      "status": "UP",
+      "id": "upt_1789903699838",
+      "checkedAt": "2026-09-20T11:28:19.838Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 379,
+      "status": "UP",
+      "id": "upt_1789903655243",
+      "checkedAt": "2026-09-20T11:27:35.243Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 147,
+      "status": "UP",
+      "id": "upt_1789903654851",
+      "checkedAt": "2026-09-20T11:27:34.851Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 279,
+      "status": "UP",
+      "id": "upt_1789903610131",
+      "checkedAt": "2026-09-20T11:26:50.131Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 147,
+      "status": "UP",
+      "id": "upt_1789903609838",
+      "checkedAt": "2026-09-20T11:26:49.838Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 381,
+      "status": "UP",
+      "id": "upt_1789903565268",
+      "checkedAt": "2026-09-20T11:26:05.268Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 194,
+      "status": "UP",
+      "id": "upt_1789903564872",
+      "checkedAt": "2026-09-20T11:26:04.872Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 298,
+      "status": "UP",
+      "id": "upt_1789903520111",
+      "checkedAt": "2026-09-20T11:25:20.111Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 127,
+      "status": "UP",
+      "id": "upt_1789903519796",
+      "checkedAt": "2026-09-20T11:25:19.796Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 414,
+      "status": "UP",
+      "id": "upt_1789903475282",
+      "checkedAt": "2026-09-20T11:24:35.282Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 193,
+      "status": "UP",
+      "id": "upt_1789903474851",
+      "checkedAt": "2026-09-20T11:24:34.851Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 432,
+      "status": "UP",
+      "id": "upt_1789903430374",
+      "checkedAt": "2026-09-20T11:23:50.374Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 287,
+      "status": "UP",
+      "id": "upt_1789903429930",
+      "checkedAt": "2026-09-20T11:23:49.930Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 324,
+      "status": "UP",
+      "id": "upt_1789903385083",
+      "checkedAt": "2026-09-20T11:23:05.084Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 127,
+      "status": "UP",
+      "id": "upt_1789903384751",
+      "checkedAt": "2026-09-20T11:23:04.751Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 225,
+      "status": "UP",
+      "id": "upt_1789903339969",
+      "checkedAt": "2026-09-20T11:22:19.969Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 124,
+      "status": "UP",
+      "id": "upt_1789903339735",
+      "checkedAt": "2026-09-20T11:22:19.735Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 254,
+      "status": "UP",
+      "id": "upt_1789903294998",
+      "checkedAt": "2026-09-20T11:21:34.998Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 121,
+      "status": "UP",
+      "id": "upt_1789903294730",
+      "checkedAt": "2026-09-20T11:21:34.730Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 264,
+      "status": "UP",
+      "id": "upt_1789903250003",
+      "checkedAt": "2026-09-20T11:20:50.003Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 131,
+      "status": "UP",
+      "id": "upt_1789903249729",
+      "checkedAt": "2026-09-20T11:20:49.729Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 253,
+      "status": "UP",
+      "id": "upt_1789903204987",
+      "checkedAt": "2026-09-20T11:20:04.987Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 127,
+      "status": "UP",
+      "id": "upt_1789903204721",
+      "checkedAt": "2026-09-20T11:20:04.721Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 241,
+      "status": "UP",
+      "id": "upt_1789903159956",
+      "checkedAt": "2026-09-20T11:19:19.956Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 121,
+      "status": "UP",
+      "id": "upt_1789903159706",
+      "checkedAt": "2026-09-20T11:19:19.706Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 298,
+      "status": "UP",
+      "id": "upt_1789903115185",
+      "checkedAt": "2026-09-20T11:18:35.185Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 288,
+      "status": "UP",
+      "id": "upt_1789903114872",
+      "checkedAt": "2026-09-20T11:18:34.872Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 245,
+      "status": "UP",
+      "id": "upt_1789903069964",
+      "checkedAt": "2026-09-20T11:17:49.964Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 128,
+      "status": "UP",
+      "id": "upt_1789903069708",
+      "checkedAt": "2026-09-20T11:17:49.708Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 260,
+      "status": "UP",
+      "id": "upt_1789903024973",
+      "checkedAt": "2026-09-20T11:17:04.973Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 122,
+      "status": "UP",
+      "id": "upt_1789903024700",
+      "checkedAt": "2026-09-20T11:17:04.700Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 244,
+      "status": "UP",
+      "id": "upt_1789902979945",
+      "checkedAt": "2026-09-20T11:16:19.945Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 123,
+      "status": "UP",
+      "id": "upt_1789902979693",
+      "checkedAt": "2026-09-20T11:16:19.693Z"
+    },
     {
       "projectId": "proj_orderkare",
       "url": "https://orderkare.co.in",
