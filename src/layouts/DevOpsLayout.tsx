@@ -52,9 +52,10 @@ export const DevOpsLayout: React.FC = () => {
       groupTitle: '1. Fleet & Workspaces',
       items: [
         { path: '/clients', label: 'Client Fleets & Setup', icon: Building, count: projects.length },
-        { path: '/', label: 'Global Overview', icon: Layers, exact: true },
+        { path: '/dashboard', label: 'Global Overview', icon: Layers },
         { path: '/mobile', label: 'Mobile App Hub & OTA', icon: Smartphone, badge: 'v1.4', badgeColor: 'bg-purple-50 text-purple-700 border-purple-200' },
       ],
+
     },
     {
       groupTitle: '2. Data & Integration',

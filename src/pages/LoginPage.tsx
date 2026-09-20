@@ -24,7 +24,7 @@ export const LoginPage: React.FC = () => {
         if (response.user) {
           localStorage.setItem('nexify_dev_user', JSON.stringify(response.user));
         }
-        navigate('/');
+        navigate('/dashboard');
         return;
       }
     } catch (err: any) {
@@ -40,9 +40,10 @@ export const LoginPage: React.FC = () => {
       // Offline / initialization fallback
       if (accessKey.trim() && securityPin === '7562') {
         localStorage.setItem('nexify_dev_token', 'nexify_dev_authenticated_session');
-        navigate('/');
+        navigate('/dashboard');
         return;
       } else {
+
         setError('Invalid Developer Access Key or 2FA Security PIN. Check internal team vault.');
         setIsSubmitting(false);
         return;

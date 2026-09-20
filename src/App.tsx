@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { ProjectProvider } from './context/ProjectContext';
 import { DevOpsLayout } from './layouts/DevOpsLayout';
+import { LandingPage } from './pages/LandingPage';
 import { LoginPage } from './pages/LoginPage';
 import { OverviewDashboard } from './pages/OverviewDashboard';
 import { ClientProjectsPage } from './pages/ClientProjectsPage';
@@ -34,6 +35,9 @@ function App() {
       <ProjectProvider>
         <BrowserRouter>
           <Routes>
+            {/* Public Enterprise Landing Page */}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/landing" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
 
             {/* Protected Control Plane Routes */}
@@ -44,7 +48,8 @@ function App() {
                 </ProtectedDevRoute>
               }
             >
-              <Route path="/" element={<OverviewDashboard />} />
+              <Route path="/dashboard" element={<OverviewDashboard />} />
+              <Route path="/overview" element={<OverviewDashboard />} />
               <Route path="/ai-sentinel" element={<AiSupervisorPage />} />
               <Route path="/cyber-defense" element={<CyberDefensePage />} />
               <Route path="/clients" element={<ClientProjectsPage />} />
@@ -67,5 +72,6 @@ function App() {
     </ThemeProvider>
   );
 }
+
 
 export default App;

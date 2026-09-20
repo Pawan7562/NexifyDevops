@@ -21,12 +21,67 @@ body {
   margin: 0;
   background-color: #F8FAFC;
   background-image: 
-    radial-gradient(1200px 600px at 50% -100px, rgba(5, 150, 105, 0.05), transparent 70%),
-    radial-gradient(800px 400px at 90% 150px, rgba(16, 185, 129, 0.03), transparent 60%);
+    radial-gradient(1200px 600px at 50% -100px, rgba(5, 150, 105, 0.06), transparent 70%),
+    radial-gradient(800px 400px at 90% 150px, rgba(16, 185, 129, 0.04), transparent 60%),
+    radial-gradient(600px 300px at 10% 400px, rgba(14, 165, 233, 0.03), transparent 50%);
   color: #0F172A;
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Landing Page Grid & Glow Patterns */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(14, 165, 233, 0.25);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.03); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
 
 /* Custom Sleek Scrollbar for White Theme */
 ::-webkit-scrollbar {
