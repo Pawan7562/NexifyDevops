@@ -1,0 +1,427 @@
+{
+  "users": [
+    {
+      "id": "usr_super_admin_01",
+      "email": "dev@nexifyforge.com",
+      "passwordHash": "$2b$10$LaXel5S6RZD.gKlonUSlJ.AcNNGgQodNLq0h9GmX5ngZYJjJHdHRO",
+      "pinHash": "$2b$10$1vLw5/vgktZW1MisPakhiugz4kIvygxIWNmTVONhhTdq/S93AD/ve",
+      "role": "SUPER_ADMIN",
+      "name": "Lead DevOps Architect",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces",
+      "createdAt": "2026-09-20T08:52:48.309Z",
+      "lastLoginAt": "2026-09-20T08:53:31.163Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_pkthenexgenexam",
+      "name": "PK The NexGen Exam Monitoring System",
+      "slug": "pkthenexgenexam",
+      "category": "AI_AUTOMATION",
+      "clientOrgName": "PK The NexGen Education & Exam Labs",
+      "primaryContact": {
+        "name": "Pawan Kumar / Exam Operations",
+        "email": "admin@pkthenexgenexam.xyz",
+        "phone": "+91 98765 43210"
+      },
+      "slaTier": "ENTERPRISE_PLATINUM",
+      "monthlyFeeINR": 65000,
+      "environment": "PRODUCTION",
+      "health": "HEALTHY",
+      "uptimePercent": 99.98,
+      "latencyMs": 133,
+      "liveUrl": "https://www.pkthenexgenexam.xyz/",
+      "repoUrl": "https://github.com/nexifyforge/pkthenexgenexam",
+      "framework": "Next.js 15 / WebRTC AI Video Stream / Python FastAPI Anti-Cheat",
+      "databaseEngine": "PostgreSQL 16 (Neon Exam Isolation DB)",
+      "paymentGateway": "Razorpay Live (Student Assessment Fee UPI)",
+      "domains": [
+        "www.pkthenexgenexam.xyz",
+        "pkthenexgenexam.xyz"
+      ],
+      "deployProvider": "VERCEL",
+      "deployHookUrl": "https://api.vercel.com/v1/integrations/deploy/prj_pkthenexgenexam/live99",
+      "tasks": [
+        {
+          "id": "tsk_exam_01",
+          "title": "AI Proctoring WebRTC Face Gaze & Multiple Person Detection",
+          "description": "Deploy real-time OpenCV / MediaPipe vision model to flag unauthorized devices and second person in frame.",
+          "priority": "P0_CRITICAL",
+          "status": "COMPLETED",
+          "assignee": "Lead Architect",
+          "dueDate": "2026-09-20",
+          "createdAt": "2026-09-18"
+        },
+        {
+          "id": "tsk_exam_02",
+          "title": "Secure Fullscreen Browser Lockdown & Tab Switch Prevention Trigger",
+          "description": "Automatically revoke student exam tokens if unauthorized windows or copy-paste shortcuts are triggered.",
+          "priority": "P1_HIGH",
+          "status": "IN_PROGRESS",
+          "assignee": "Frontend Dev",
+          "dueDate": "2026-09-26",
+          "createdAt": "2026-09-19"
+        }
+      ],
+      "deployments": [
+        {
+          "id": "dep_exam_01",
+          "version": "v3.1.0",
+          "commitHash": "e49a1bc",
+          "commitMessage": "release: AI face posture anti-cheat detection and real-time audio anomaly warning",
+          "author": "Lead Architect",
+          "status": "SUCCESS",
+          "environment": "PRODUCTION",
+          "timestamp": "2026-09-20 01:40:00",
+          "durationSeconds": 45
+        }
+      ],
+      "docs": [
+        {
+          "id": "doc_exam_01",
+          "title": "NexGen Exam System Architecture & WebRTC AI Protocol",
+          "category": "ARCHITECTURE",
+          "content": "# PK The NexGen Exam Monitoring Architecture\n\n- **Live Exam Portal**: https://www.pkthenexgenexam.xyz/\n- **Frontend**: Next.js 15 App Router + TailwindCSS + WebRTC MediaStream API.\n- **AI Proctoring Engine**: Python FastAPI + OpenCV + MediaPipe face mesh gaze tracking.\n- **Database**: PostgreSQL 16 Neon Serverless (Dedicated Exam Session Schema).",
+          "lastUpdated": "2026-09-20",
+          "author": "Lead Architect"
+        }
+      ],
+      "secrets": [
+        {
+          "id": "sec_exam_01",
+          "key": "DATABASE_URL",
+          "ciphertext": "a140ce7dea7ad7ea16f5f6170213fa7f2dbfdc3906e499e2e6fff905ea9524d6db8205691b880d15982feaa30c044cd21999c0c784dec681b8dc0d5d26116166ec551cc492ce58f573d55e4219e021b632e898583ab82097f77d0330ff0c806f51a7624a2e1fca0269b229279541072949bd94",
+          "iv": "9b84b76586dfadf0f4856c95",
+          "tag": "e9f1ed0025c8b7fedd16e56aa4cab487",
+          "masked": true,
+          "environment": "PRODUCTION",
+          "description": "PostgreSQL 16 Neon Isolated Exam Database",
+          "updatedAt": "2026-09-20"
+        },
+        {
+          "id": "sec_exam_02",
+          "key": "WEBRTC_TURN_SECRET",
+          "ciphertext": "9b80787c61ebf26a17511b96276edb137b63a57331156a4122b83807c93a6066c4e563f21727a0",
+          "iv": "dc536634d910de0dcd315847",
+          "tag": "5c473f2e3d7e311fac26fecbce87602f",
+          "masked": true,
+          "environment": "PRODUCTION",
+          "description": "WebRTC Coturn STUN/TURN streaming credentials",
+          "updatedAt": "2026-09-20"
+        },
+        {
+          "id": "sec_exam_03",
+          "key": "RAZORPAY_KEY_ID",
+          "ciphertext": "b7ed5484df43c01a501aaee38d9728a68dfcabf5fc7284",
+          "iv": "da6296e13d3f9f14961f8d22",
+          "tag": "ccd6368c27ab6b24bad832f7be3e9d3f",
+          "masked": false,
+          "environment": "PRODUCTION",
+          "description": "Razorpay Live Merchant Public Key for Assessment Fees",
+          "updatedAt": "2026-09-20"
+        }
+      ],
+      "team": [
+        {
+          "id": "tm_1",
+          "name": "Lead Architect",
+          "email": "dev@nexifyforge.com",
+          "role": "LEAD_ARCHITECT"
+        },
+        {
+          "id": "tm_2",
+          "name": "AI Vision Engineer",
+          "email": "ai@nexifyforge.com",
+          "role": "BACKEND_DEV"
+        }
+      ],
+      "createdAt": "2026-09-01",
+      "updatedAt": "2026-09-20"
+    },
+    {
+      "id": "proj_orderkare",
+      "name": "OrderKare Dining & QR SaaS",
+      "slug": "orderkare",
+      "category": "SAAS",
+      "clientOrgName": "OrderKare Technologies Pvt Ltd",
+      "primaryContact": {
+        "name": "Pawan Kumar",
+        "email": "admin@orderkare.com",
+        "phone": "+91 98765 43210"
+      },
+      "slaTier": "ENTERPRISE_PLATINUM",
+      "monthlyFeeINR": 45000,
+      "environment": "PRODUCTION",
+      "health": "HEALTHY",
+      "uptimePercent": 99.99,
+      "latencyMs": 263,
+      "liveUrl": "https://orderkare.co.in",
+      "repoUrl": "https://github.com/Pawan7562/Orderkare",
+      "framework": "React 19 / Node.js Express / Socket.IO",
+      "databaseEngine": "PostgreSQL 16 (Neon Serverless)",
+      "paymentGateway": "Razorpay Live (India UPI & Cards)",
+      "domains": [
+        "orderkare.co.in",
+        "www.orderkare.co.in"
+      ],
+      "deployProvider": "RENDER",
+      "deployHookUrl": "https://api.render.com/deploy/srv-c0rderkare991?key=live_secret_key",
+      "tasks": [
+        {
+          "id": "tsk_01",
+          "title": "Complete single Razorpay automated payment flow integration",
+          "description": "Streamline automated Razorpay checkout modal with live signature verification.",
+          "priority": "P0_CRITICAL",
+          "status": "COMPLETED",
+          "assignee": "Lead Architect",
+          "dueDate": "2026-09-20",
+          "createdAt": "2026-09-18"
+        }
+      ],
+      "deployments": [
+        {
+          "id": "dep_01",
+          "version": "v2.4.1",
+          "commitHash": "7e45e90",
+          "commitMessage": "feat: add standalone Razorpay single checkout & super admin metrics sync",
+          "author": "Lead Architect",
+          "status": "SUCCESS",
+          "environment": "PRODUCTION",
+          "timestamp": "2026-09-20 01:25:00",
+          "durationSeconds": 42
+        }
+      ],
+      "docs": [
+        {
+          "id": "doc_01",
+          "title": "OrderKare Architecture Overview",
+          "category": "ARCHITECTURE",
+          "content": "# OrderKare Architecture\n\n- **Live Domain**: https://orderkare.co.in\n- **Backend**: Node.js Express + Prisma ORM on Render.",
+          "lastUpdated": "2026-09-20",
+          "author": "Lead Architect"
+        }
+      ],
+      "secrets": [
+        {
+          "id": "sec_ok_01",
+          "key": "DATABASE_URL",
+          "ciphertext": "09007292ad34a4c128fe566dbb9982a5dfb142d2ea6dcf4e3438be0d01fde0634931b2da56d1f23efaf7dfa1a767cacf8e6aef40397b7a857f01549f723020542e4c800bf53290879b0e2f8e0afc4e143815c962b69b88ae76283920a6c353a5ee454ba0d1165cc40fd665ffd9c9cd33",
+          "iv": "5f309ce2f27701f75b960153",
+          "tag": "79e99a235633456a9017b6f7dea2c3bd",
+          "masked": true,
+          "environment": "PRODUCTION",
+          "description": "Neon Serverless PostgreSQL connection string",
+          "updatedAt": "2026-09-20"
+        },
+        {
+          "id": "sec_ok_02",
+          "key": "RAZORPAY_KEY_ID",
+          "ciphertext": "460f4a3e12674c58cfa84687a9b4dd80afc6773331eb5816202f2f6d265caa",
+          "iv": "c7c63c0d1a3c09e9bc9e6cca",
+          "tag": "22fbf09299b17ace1f3a0468d652ea77",
+          "masked": false,
+          "environment": "PRODUCTION",
+          "description": "Razorpay Live Merchant Public Key for Online Orders",
+          "updatedAt": "2026-09-20"
+        }
+      ],
+      "team": [
+        {
+          "id": "tm_1",
+          "name": "Lead Architect",
+          "email": "dev@nexifyforge.com",
+          "role": "LEAD_ARCHITECT"
+        }
+      ],
+      "createdAt": "2026-09-01",
+      "updatedAt": "2026-09-20"
+    }
+  ],
+  "auditLogs": [
+    {
+      "actor": "dev@nexifyforge.com",
+      "action": "SECRET_VAULT_DECRYPT",
+      "target": "Secret sec_exam_01 on Project proj_pkthenexgenexam",
+      "severity": "WARNING",
+      "id": "aud_1789894411178_1ejy",
+      "timestamp": "2026-09-20T08:53:31.178Z"
+    },
+    {
+      "actor": "dev@nexifyforge.com",
+      "action": "USER_LOGIN",
+      "target": "Nexify DevOps Control Plane",
+      "severity": "INFO",
+      "ipAddress": "::1",
+      "id": "aud_1789894411165_n5nn",
+      "timestamp": "2026-09-20T08:53:31.165Z"
+    },
+    {
+      "actor": "dev@nexifyforge.com",
+      "action": "USER_LOGIN",
+      "target": "Nexify DevOps Control Plane",
+      "severity": "INFO",
+      "ipAddress": "::1",
+      "id": "aud_1789894398941_vpi0",
+      "timestamp": "2026-09-20T08:53:18.941Z"
+    },
+    {
+      "id": "aud_init",
+      "actor": "Lead Architect (dev@nexifyforge.com)",
+      "action": "SYSTEM_BOOTSTRAP",
+      "target": "Nexify DevOps Control Plane Database Initialized",
+      "severity": "INFO",
+      "timestamp": "2026-09-20T08:52:48.311Z"
+    }
+  ],
+  "uptimeHistory": [
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 263,
+      "status": "UP",
+      "id": "upt_1789894593763",
+      "checkedAt": "2026-09-20T08:56:33.763Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 133,
+      "status": "UP",
+      "id": "upt_1789894593492",
+      "checkedAt": "2026-09-20T08:56:33.492Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 248,
+      "status": "UP",
+      "id": "upt_1789894548776",
+      "checkedAt": "2026-09-20T08:55:48.776Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 184,
+      "status": "UP",
+      "id": "upt_1789894548520",
+      "checkedAt": "2026-09-20T08:55:48.520Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 318,
+      "status": "UP",
+      "id": "upt_1789894503820",
+      "checkedAt": "2026-09-20T08:55:03.820Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 161,
+      "status": "UP",
+      "id": "upt_1789894503498",
+      "checkedAt": "2026-09-20T08:55:03.498Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 245,
+      "status": "UP",
+      "id": "upt_1789894458758",
+      "checkedAt": "2026-09-20T08:54:18.758Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 185,
+      "status": "UP",
+      "id": "upt_1789894458507",
+      "checkedAt": "2026-09-20T08:54:18.507Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 235,
+      "status": "UP",
+      "id": "upt_1789894413978",
+      "checkedAt": "2026-09-20T08:53:33.978Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 417,
+      "status": "UP",
+      "id": "upt_1789894413738",
+      "checkedAt": "2026-09-20T08:53:33.738Z"
+    },
+    {
+      "projectId": "proj_orderkare",
+      "url": "https://orderkare.co.in",
+      "statusCode": 200,
+      "latencyMs": 609,
+      "status": "UP",
+      "id": "upt_1789894374481",
+      "checkedAt": "2026-09-20T08:52:54.481Z"
+    },
+    {
+      "projectId": "proj_pkthenexgenexam",
+      "url": "https://www.pkthenexgenexam.xyz/",
+      "statusCode": 200,
+      "latencyMs": 546,
+      "status": "UP",
+      "id": "upt_1789894373867",
+      "checkedAt": "2026-09-20T08:52:53.867Z"
+    }
+  ],
+  "webhooks": [],
+  "invoices": [
+    {
+      "id": "inv_2026_09_01",
+      "projectId": "proj_pkthenexgenexam",
+      "invoiceNumber": "NXF-INV-2026-0901",
+      "clientName": "PK The NexGen Education & Exam Labs",
+      "amountINR": 65000,
+      "status": "PAID",
+      "dueDate": "2026-10-05",
+      "billingCycle": "September 2026",
+      "lineItems": [
+        {
+          "description": "Dedicated AI Proctoring Fleet SLA & Infrastructure Management",
+          "amount": 45000
+        },
+        {
+          "description": "High-Concurrency WebRTC Exam Video Stream Monitoring",
+          "amount": 20000
+        }
+      ],
+      "createdAt": "2026-09-01"
+    },
+    {
+      "id": "inv_2026_09_02",
+      "projectId": "proj_orderkare",
+      "invoiceNumber": "NXF-INV-2026-0902",
+      "clientName": "OrderKare Technologies Pvt Ltd",
+      "amountINR": 45000,
+      "status": "PAID",
+      "dueDate": "2026-10-05",
+      "billingCycle": "September 2026",
+      "lineItems": [
+        {
+          "description": "Enterprise Multi-Restaurant Fleet & Razorpay Gateway Ops",
+          "amount": 45000
+        }
+      ],
+      "createdAt": "2026-09-01"
+    }
+  ]
+}
